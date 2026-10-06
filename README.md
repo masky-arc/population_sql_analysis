@@ -1,15 +1,5 @@
 # Population SQL Analysis
 
-A beginner-to-intermediate SQL project that analyzes historical population data using **MySQL**.
-
-The project focuses on practical SQL skills such as filtering, sorting, aggregation, subqueries, `CASE`, `JOIN`, grouping, calculated columns, and ranking.
-
-## Recommended Repository Name
-
-**`population-sql-analysis`**
-
-This name is short, professional, easy to search, and clearly communicates that the repository contains a SQL-based population analysis project.
-
 ## Project Files
 
 ```text
@@ -22,31 +12,9 @@ population-sql-analysis/
 
 ### File Description
 
-| File | Purpose |
-|---|---|
 | `population.csv` | Raw population dataset |
-| `population_analysis.sql` | Database setup and 7 SQL analysis queries |
+| `population_analysis.sql` | Database setup and  SQL analysis queries |
 | `README.md` | Project documentation |
-
----
-
-## Project Objective
-
-The objective of this project is to use SQL to explore population trends across countries and other entities over time.
-
-The analysis answers seven practical questions:
-
-1. What is the latest population for every entity?
-2. Which 10 entities have the largest population in the latest year?
-3. How has India's population changed over time?
-4. How much did India's population grow from the first to latest year?
-5. What was India's average population in each decade?
-6. Which entities had at least 100 million people in 2023?
-7. Which entities had the highest percentage population growth from 1950 to 2023?
-
-The questions are intentionally designed to be understandable to **freshers, beginners, and intermediate SQL learners** while still demonstrating useful real-world SQL techniques.
-
----
 
 ## Dataset
 
@@ -85,9 +53,6 @@ The project renames `all years` to `Population` when creating the SQL table beca
 - SQL
 - CSV
 
-No Python, Excel, Power BI, or external libraries are required to run the SQL analysis.
-
----
 
 ## SQL Concepts Used
 
@@ -109,74 +74,6 @@ This project demonstrates the following SQL concepts:
 - Calculated columns
 - Percentage calculations
 - Table aliases
-
----
-
-## Database Setup
-
-### 1. Install MySQL
-
-Install **MySQL 8.0 or later**.
-
-MySQL Workbench is recommended because it makes CSV importing easier for beginners.
-
-### 2. Open MySQL Workbench
-
-Create a new SQL tab and run:
-
-```sql
-CREATE DATABASE population_analysis;
-USE population_analysis;
-```
-
-### 3. Create the Table
-
-Run:
-
-```sql
-CREATE TABLE population (
-    Entity VARCHAR(150),
-    Code VARCHAR(20),
-    Year INT,
-    Population BIGINT
-);
-```
-
-### 4. Import the CSV
-
-Use:
-
-**MySQL Workbench → Table Data Import Wizard**
-
-Select:
-
-```text
-population.csv
-```
-
-Map the CSV columns as follows:
-
-| CSV Column | MySQL Column |
-|---|---|
-| Entity | Entity |
-| Code | Code |
-| Year | Year |
-| all years | Population |
-
-The raw CSV is not modified. Only the SQL table uses the clearer column name `Population`.
-
----
-
-## Running the Project
-
-After importing the data:
-
-1. Open `population_analysis.sql`.
-2. Select the `population_analysis` database.
-3. Run the queries individually.
-4. Review the result grid in MySQL Workbench.
-5. Compare results across years and entities.
-6. Use the queries as a starting point for additional analysis.
 
 ---
 
@@ -242,12 +139,6 @@ This query can later be used as the source for a line chart in a visualization t
 
 Compares India's population in the first available year with its population in the latest available year.
 
-The query calculates:
-
-```text
-Population Growth = Latest Population - First Population
-```
-
 ---
 
 ## Q5. What was India's average population in each decade?
@@ -262,14 +153,6 @@ Population Growth = Latest Population - First Population
 ### Purpose
 
 Groups India's yearly population into decades and calculates the average population for each decade.
-
-Example:
-
-```text
-1950s → 1950
-1960s → 1960
-1970s → 1970
-```
 
 ---
 
@@ -301,32 +184,6 @@ Identifies entities with a population of at least 100 million in 2023 and sorts 
 ### Purpose
 
 Compares the 1950 and 2023 population values for the same entity and calculates percentage growth.
-
-Formula:
-
-```text
-Growth % = ((2023 Population - 1950 Population) / 1950 Population) × 100
-```
-
----
-
-# Beginner Learning Path
-
-If you are new to SQL, study the queries in this order:
-
-```text
-Q3 → Q6 → Q2 → Q1 → Q5 → Q4 → Q7
-```
-
-### Why this order?
-
-| Stage | Queries | Main Learning |
-|---|---|---|
-| Beginner | Q3, Q6 | `SELECT`, `WHERE`, `ORDER BY` |
-| Beginner+ | Q2, Q1 | `LIMIT`, `MAX()`, subqueries |
-| Intermediate | Q5 | Aggregation and grouping |
-| Intermediate | Q4 | `JOIN` + subqueries |
-| Intermediate+ | Q7 | Self-join + percentage calculation |
 
 ---
 
@@ -365,17 +222,6 @@ For serious analysis, always review the source metadata before interpreting resu
 
 ---
 
-# Project Limitations
-
-1. This project uses a population dataset only; it does not explain the causes of population changes.
-2. The dataset contains regions and aggregates in addition to countries.
-3. The analysis covers the available historical period rather than providing a custom forecast.
-4. Population totals should not automatically be interpreted as country-only totals.
-5. Percentage growth can be strongly affected by a small starting population.
-6. This project does not include demographic variables such as fertility, mortality, migration, or age structure.
-
----
-
 # Future Improvements
 
 Possible extensions for an intermediate SQL project:
@@ -392,30 +238,6 @@ Possible extensions for an intermediate SQL project:
 - Build a population trend dashboard.
 
 ---
-
-# Suggested GitHub Repository Description
-
-> **Beginner-friendly MySQL project analyzing global population trends from 1950–2023 using practical SQL queries, aggregations, joins, subqueries, and population growth calculations.**
-
----
-
-# Author
-
-**MASKYY**
-
-Created as a practical SQL learning and portfolio project.
-
----
-
-# Data Source & Attribution
-
-The dataset documentation identifies the main source as:
-
-**United Nations, Department of Economic and Social Affairs, Population Division (2024), World Population Prospects 2024, Online Edition.**
-
-The data package was processed and published through **Our World in Data**.
-
-Please retain the original dataset attribution when redistributing or extending this project.
 
 ## Source
 
